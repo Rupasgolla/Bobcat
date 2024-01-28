@@ -27,7 +27,7 @@ EXT_NET_GATEWAY=$(whiptail --inputbox "Please Enter External Network GatewayIP (
 #opentack all-in-one deployment
 
 dnf update -y
-dnf install epel-release epel-next-release -y
+dnf remove python3-requests -y  
 dnf install git python3-devel libffi-devel gcc openssl-devel python3-libselinux -y
 dnf install python3-pip -y
 pip3 install -U pip
