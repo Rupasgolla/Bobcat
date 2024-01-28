@@ -4,8 +4,8 @@ set -e
 OPENSTACK_VERSION=$(whiptail --menu " Choose an OpenStack Cloud version ☁︎ " --title " Openstack Version ☁️" 18 100 10 \
   "2023.2" " OpenStack Bobcat Stable Version " 3>&1 1>&2 2>&3) 
 OPENSTACK_VIP=$(whiptail --inputbox "Please Enter the OpenStack VIP  " --title " OpenStack Vıp " 10 65 3>&1 1>&2 2>&3 )
-INTERNAL_NIC_NAME=$(whiptail --inputbox "Please Enter the Primary NIC Name (EX:- eth0 eno1..) " --title " OpenStack Primary NIC 🔗 " 10 65 3>&1 1>&2 2>&3 )
-EXTERNAL_NIC_NAME=$(whiptail --inputbox "Please Enter the Secondary NIC Name (EX:- eth1 eno2..) " --title " OpenStack Secondary NIC 🔗 " 10 65 3>&1 1>&2 2>&3 )
+INTERNAL_NIC_NAME=$(whiptail --inputbox "Please Enter the Primary NIC Name (EX:- eth0 ens192..) " --title " OpenStack Primary NIC 🔗 " 10 65 3>&1 1>&2 2>&3 )
+EXTERNAL_NIC_NAME=$(whiptail --inputbox "Please Enter the Secondary NIC Name (EX:- eth1 ens224..) " --title " OpenStack Secondary NIC 🔗 " 10 65 3>&1 1>&2 2>&3 )
 NEWTRON_PLUGIN=$(whiptail --menu "Choose Neutron Network Plugin 🖧 " 18 100 10 \
   "ovn" "Open Virtual Network." \
   "openvswitch" "A software-defined networking (SDN) " \
@@ -20,7 +20,7 @@ KEYSTONE_ADMIN_PASSWORD=$(whiptail --passwordbox "Please Enter Keystone Admin Pa
 
 IP_VERSION=${IP_VERSION:-4}
 EXT_NET_CIDR=$(whiptail --inputbox "Please Enter Provider/External Network CIDR Range 🕸 (EX:- 172.16.24.1/23..) " --title " 🕸 Openstack External CIDR Range 🕸 " 10 95 3>&1 1>&2 2>&3 )
-EXT_NET_RANGE=$(whiptail --inputbox "Please Enter External Network Start and end IP's (EX:- start=172.16.24.120,end=172.16.24.140) " --title " OpenStack External CIDR  Start and End IP " 10 95 3>&1 1>&2 2>&3 )
+EXT_NET_RANGE=$(whiptail --inputbox "Please Enter External Network Start and end IP's (EX:- start=172.16.24.120,end=172.16.24.130) " --title " OpenStack External CIDR  Start and End IP " 10 95 3>&1 1>&2 2>&3 )
 EXT_NET_GATEWAY=$(whiptail --inputbox "Please Enter External Network GatewayIP (EX:- 172.16.24.1) " --title " OpenStack External Gateway IP " 10 95 3>&1 1>&2 2>&3 )
 
 
