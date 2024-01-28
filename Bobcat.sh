@@ -24,12 +24,6 @@ EXT_NET_RANGE=$(whiptail --inputbox "Please Enter External Network Start and end
 EXT_NET_GATEWAY=$(whiptail --inputbox "Please Enter External Network GatewayIP (EX:- 172.16.24.1) " --title " OpenStack External Gateway IP " 10 95 3>&1 1>&2 2>&3 )
 
 
-#Disable Firewall&SELinux
-systemctl stop firewalld&&systemctl disable firewalld
-setenforce 0
-sed -i "s/SELINUX=enforcing/SELINUX=disabled/g" /etc/selinux/config
-
-
 #opentack all-in-one deployment
 
 dnf update -y
